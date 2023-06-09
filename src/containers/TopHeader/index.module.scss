@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    background: white;
+    justify-content: flex-end;
+
+    .avator {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        min-height: 64px;
+        font-size: 14px;
+        margin-right: 20px;
+        font-weight: 600;
+        .img {
+            height: 32px;
+            width: 32px;
+            object-fit: fill;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+    }
+
+
+
+}
