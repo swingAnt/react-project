@@ -5,6 +5,9 @@ import { DatabaseTwoTone, AppstoreTwoTone } from '@ant-design/icons';
 import Table from '@/components/Table'
 import Card from '@/components/Card'
 import Seach from '@/components/Seach'
+import {getUserInfo} from '@/api/index.jsx'
+
+
 const list = [
     {
       key: 1,
@@ -39,7 +42,10 @@ const list = [
   ];
 export default function ListView(props) {
     useEffect(() => {
-
+         getUserInfo().then(user=>{
+          console.log('user',user)
+        })
+           
     }, [])
     const [view, setView] = useState('1');
 

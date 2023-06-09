@@ -37,6 +37,7 @@ const App = (props) => (
     columns={columns}
     rowSelection={{}}
     dataSource={props.list}
+    pagination={false}
   /></>
 );
 

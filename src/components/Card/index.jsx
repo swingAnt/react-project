@@ -7,7 +7,7 @@ import { useMount, useUnmount } from 'ahooks';
 
 
 
-export default function RankTheDimensionTable(props) {
+export default function Card(props) {
   const { list, onDelete, onEdit, onAbilityQuality, } = props;
   const [span, setSpan] = useState(6);
   useMount(() => {
@@ -49,7 +49,7 @@ export default function RankTheDimensionTable(props) {
             onAbilityQuality={onAbilityQuality}
             onEdit={onEdit}
             onDelete={onDelete}
-            key={r.infoCode}
+            key={r.key}
           />
 
         })

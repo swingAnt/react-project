@@ -1,6 +1,6 @@
 import { Menu } from 'antd';
 import React from 'react';
-import { UserOutlined } from '@ant-design/icons';
+import { WindowsFilled ,BankFilled} from '@ant-design/icons';
 // 高阶组件，包裹useNavigate()功能
 import WidthUseNavigate from './widthUseNavigate.js';
 import logo from '@/assets/images/logo.png';
@@ -12,28 +12,25 @@ class SiderLeft extends React.Component {
         this.state = {
             items: [{
                 key: "/home",
-                icon: React.createElement(UserOutlined),
-                label: "列表"
+                icon: React.createElement(BankFilled),
+                label: "自由布局"
             }, {
                 key: "/home/manage",
-                icon: React.createElement(UserOutlined),
+                icon: React.createElement(WindowsFilled),
                 label: "组件管理",
                 children: [{
+                    key: "/home/manage/table",
+                    label: "列表"
+                },{
                     key: "/home/manage/form",
                     label: "表单"
                 }, {
-                    key: "/home/user/auth",
-                    label: "权限设置"
+                    key: "/home/manage/tour",
+                    label: "漫游向导"
                 }, {
-                    key: "sub23",
-                    label: "菜单三"
-                }, {
-                    key: "sub24",
-                    label: "菜单四"
-                }, {
-                    key: "sub25",
-                    label: "菜单五"
-                }]
+                    key: "404",
+                    label: "404页面"
+                }, ]
             }]
         };
     }
@@ -60,7 +57,7 @@ class SiderLeft extends React.Component {
                 theme="light"
                 mode="inline"
                 defaultSelectedKeys={['/home']}
-                defaultOpenKeys={['/home/user']}
+                defaultOpenKeys={['/home/manage']}
                 style={{
                     height: '100%',
                     borderRight: 0,
