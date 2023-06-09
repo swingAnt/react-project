@@ -15,6 +15,13 @@ const routerData= [
         desc: '列表',
         authority: "",
     },
+    {
+        id: "/home",
+        path: "/home",
+        element: <ListView />,
+        desc: '列表',
+        authority: "",
+    },
   
 {
     id: "/home/manage/form",
