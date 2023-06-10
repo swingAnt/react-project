@@ -70,8 +70,7 @@ class Request {
          */
         this.service.interceptors.response.use(
             (response) => {
-                const { data, config } = response;
-                debugger
+                const { data, } = response;
                 endLoading();
                 if (data.code === RequestEnums.LOGINTIMEOUT) {
                     // 表示登录过期，需要重定向至登录页面

@@ -1,6 +1,7 @@
-import React, { useEffect,useState } from 'react'
+import React, { useState } from 'react'
 import styles from './index.less'
 import { Button } from 'antd';
+import { useMount } from 'ahooks';
 import { DatabaseTwoTone, AppstoreTwoTone } from '@ant-design/icons';
 import Table from '@/components/Table'
 import Card from '@/components/Card'
@@ -8,7 +9,7 @@ import Seach from '@/components/Seach'
 import {getUserInfo} from '@/api/index.jsx'
 
 
-const list = [
+const data = [
     {
       key: 1,
       name: 'John Brown',
@@ -41,13 +42,16 @@ const list = [
     },
   ];
 export default function ListView(props) {
-    useEffect(() => {
+  const [view, setView] = useState('1');
+  const [list, setList] = useState([]);
+  console.log('ListView')
+
+  useMount(() => {
          getUserInfo().then(user=>{
-          console.log('user',user)
+          setList(data)
         })
            
-    }, [])
-    const [view, setView] = useState('1');
+    })
 
     return <div className={styles.Container}>
         <Seach />

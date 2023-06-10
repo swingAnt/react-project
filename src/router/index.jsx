@@ -1,17 +1,15 @@
-import React, { Suspense } from 'react';
+import React from 'react'
 import { Routes, } from "react-router-dom";
 import { routes } from "./routerData";
 
-function RouterManage(props) {
 
+function RouterManage(props) {
   const route = routes();
   return (
-    <Suspense fallback={<div>loading...</div>}>
+
       <Routes>
         {route}
       </Routes>
-    </Suspense>
-
 
   );
 }

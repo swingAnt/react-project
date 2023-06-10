@@ -1,27 +1,27 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import { lazy } from 'react'
+const ErrorPage = lazy(() => import('@/pages/ErrorPage/index.tsx'))
+const ListView = lazy(() => import('@/pages/ListView'))
+const Form = lazy(() => import('@/components/Form'))
+const Tour = lazy(() => import('@/components/Tour'))
+const LayoutFree = lazy(() => import('@/components/LayoutFree'))
+const Home = lazy(() => import('@/containers'))
 
-import ErrorPage from "@/pages/ErrorPage/index.tsx";
-import ListView from "@/pages/ListView";
-import Form from "@/components/Form";
-import Tour from "@/components/Tour";
-import LayoutFree from "@/components/LayoutFree";
+// import ErrorPage from "@/pages/ErrorPage/index.tsx";
+// import ListView from "@/pages/ListView";
+// import Form from "@/components/Form";
+// import Tour from "@/components/Tour";
+// import LayoutFree from "@/components/LayoutFree";
 
-import Home from "@/containers/index";
+// import Home from "@/containers/index";
 
 const routerData= [
     {
         id: "/",
         path: "/",
         element: <LayoutFree />,
-        desc: '自由布局',
-        authority: "",
-    },
-    {
-        id: "/home",
-        path: "/home",
-        element: <LayoutFree />,
-        desc: '列表',
+        desc: '首页布局',
         authority: "",
     },
     {

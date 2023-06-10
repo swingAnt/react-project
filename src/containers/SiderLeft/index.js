@@ -1,6 +1,6 @@
 import { Menu } from 'antd';
 import React from 'react';
-import { WindowsFilled ,BankFilled} from '@ant-design/icons';
+import { WindowsFilled, BankFilled } from '@ant-design/icons';
 // 高阶组件，包裹useNavigate()功能
 import WidthUseNavigate from './widthUseNavigate.js';
 import logo from '@/assets/images/logo.png';
@@ -11,7 +11,7 @@ class SiderLeft extends React.Component {
         super(props);
         this.state = {
             items: [{
-                key: "/home",
+                key: "/",
                 icon: React.createElement(BankFilled),
                 label: "自由布局"
             }, {
@@ -21,7 +21,7 @@ class SiderLeft extends React.Component {
                 children: [{
                     key: "/home/manage/table",
                     label: "列表"
-                },{
+                }, {
                     key: "/home/manage/form",
                     label: "表单"
                 }, {
@@ -30,18 +30,31 @@ class SiderLeft extends React.Component {
                 }, {
                     key: "404",
                     label: "404页面"
-                }, ]
-            }]
+                },]
+            }],
+            selectedKeys: []
         };
     }
- 
+    componentDidMount() {
+        const url = window.location.href
+        const startIndex = url.indexOf('/#')
+        const endIndex = url.indexOf('?') === -1 ? url.length : url.indexOf('?')
+        const selectedKeys = url.substring(startIndex + 2, endIndex)
+        this.setState({
+            selectedKeys
+        })
+
+    }
     click = (e) => {
         console.log(e);
         console.log(e.key);
         //注意this指向问题，采用箭头函数this就指向当前组件
+        this.setState({
+            selectedKeys: [e.key]
+        })
         this.props.to(e.key);
     }
- 
+
     openChange() {
         console.log('OpenChange');
     }
@@ -49,23 +62,24 @@ class SiderLeft extends React.Component {
         return (
             <div className={styles.siderLeft}>
                 <div className={styles.logo}>
-                 <img src={logo} alt="logo" className={styles.img}/>
-                 XXX系统
-            </div>
-               
-            <Menu
-                theme="light"
-                mode="inline"
-                defaultSelectedKeys={['/home']}
-                defaultOpenKeys={['/home/manage']}
-                style={{
-                    height: '100%',
-                    borderRight: 0,
-                }}
-                items={this.state.items}
-                onOpenChange={() => this.openChange()}
-                onClick={this.click}
-            />
+                    <img src={logo} alt="logo" className={styles.img} />
+                    XXX系统
+                </div>
+
+                <Menu
+                    theme="light"
+                    mode="inline"
+                    defaultSelectedKeys={['/']}
+                    defaultOpenKeys={['/home/manage']}
+                    style={{
+                        height: '100%',
+                        borderRight: 0,
+                    }}
+                    items={this.state.items}
+                    onOpenChange={() => this.openChange()}
+                    onClick={this.click}
+                    selectedKeys={this.state.selectedKeys}
+                />
             </div>
         )
     }

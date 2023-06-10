@@ -1,11 +1,9 @@
-import React from 'react';
-import { Breadcrumb, Layout } from 'antd';
+import React, { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import SiderLeft from './SiderLeft';
 import TopHeader from './TopHeader';
 import styles from './index.module.scss'
-
-const { Header, Content, Sider } = Layout;
+import { Skeleton } from 'antd';
  
 export default class Home extends React.Component {
     constructor(props) {
@@ -38,10 +36,12 @@ export default class Home extends React.Component {
                     <div
                         className={styles.content}
                     >
-         
+             <Suspense fallback={<Skeleton active />}>
+
                             {/* 渲染子路由 匹配到子路由时，用子路由的组件替换此处内容*/}
                             {/* 类似Vue中的router-view */}
                             <Outlet />
+                            </Suspense>
                     </div>
                 </div>
             </div>

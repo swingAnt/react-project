@@ -1,11 +1,9 @@
 
-import React, { CSSProperties, PropsWithChildren, useState } from 'react'
+import React from 'react'
 import { Form, Space, Row, Col, Input, Button } from 'antd'
 import styles from './index.module.scss'
 
-
-
-export default function a (props) {
+export default function Seach (props) {
     const { fetchQuestionList, } = props
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [form] = Form.useForm();
@@ -31,7 +29,7 @@ export default function a (props) {
                         wrapperCol: { span: 18 },
                     }}
                 >
-                    <Input className={styles.rankSelection} placeholder="请输入问卷名称" allowClear />
+                    <Input className={styles.rankSelection} placeholder="请输入搜索名称" allowClear />
                 </Form.Item></Col>
             <Col span={5} className={styles.col}>
                 <Form.Item

@@ -1,5 +1,5 @@
 //模拟的请求数据
-export default {
+const funcs= {
   getUser: () => {
     return {
       code: 200,
@@ -12,4 +12,5 @@ export default {
     };
   },
 };
+export default funcs
 
