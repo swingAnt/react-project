@@ -22,7 +22,8 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2",
     "sass": "^1.62.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "wujie-react": "^1.0.0-rc.25"
   },
   "scripts": {
     "dev": "dotenv -e .env.development react-app-rewired start",
