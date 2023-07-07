@@ -33,3 +33,6 @@ yarn config set registry http://registry.npm.taobao.org/   【设置淘宝镜像
 
 5.然后npm run dev 进行启动项目就可以访问了
 
+
+效果演示地址:https://static-mp-970b6f53-3880-4e99-a421-3b248825ecdf.next.bspapp.com/react/index.html#/
+
