@@ -15,6 +15,10 @@ class SiderLeft extends React.Component {
                 icon: React.createElement(BankFilled),
                 label: "自由布局"
             }, {
+                key: "/ai",
+                icon: React.createElement(BankFilled),
+                label: "ai问答"
+            }, {
                 key: "/home/manage",
                 icon: React.createElement(WindowsFilled),
                 label: "组件管理",

@@ -7,6 +7,7 @@ const Form = lazy(() => import('@/components/Form'))
 const Tour = lazy(() => import('@/components/Tour'))
 const LayoutFree = lazy(() => import('@/components/LayoutFree'))
 const Home = lazy(() => import('@/containers'))
+const QAPage = lazy(() => import('@/pages/QAPage'))
 
 // import ErrorPage from "@/pages/ErrorPage/index.tsx";
 // import ListView from "@/pages/ListView";
@@ -22,6 +23,13 @@ const routerData= [
         path: "/",
         element: <LayoutFree />,
         desc: '首页布局',
+        authority: "",
+    },
+    {
+        id: "/ai",
+        path: "/ai",
+        element: <QAPage />,
+        desc: 'chartGpt',
         authority: "",
     },
     {
@@ -45,6 +53,7 @@ const routerData= [
     desc: '向导',
     authority: "",
 },
+
 {
     id: "*",
     path: "*",

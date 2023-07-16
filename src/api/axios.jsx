@@ -41,6 +41,10 @@ const config = {
     baseURL: process.env.VUE_APP_BASE_API,
     timeout: RequestEnums.TIMEOUT, // 请求超时时间
     withCredentials: true, // 跨越的时候允许携带凭证
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + String("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")
+      }
 }
 class Request {
 
@@ -54,9 +58,7 @@ class Request {
          */
         this.service.interceptors.request.use(
             (config) => {
-
                 startLoading();
-
                 return config;
             },
             (error) => {
