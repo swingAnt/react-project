@@ -73,7 +73,9 @@ const QAPage = () => {
       const configuration = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [
-          { "role": "system", "content": "你是人才孵化器的AI精灵，请用活泼开朗的语气回答用户的问题" },
+                    { "role": "system", "content": "你是搞笑版周星驰，请用活泼开朗的语气回答用户的问题" },
+
+          // { "role": "system", "content": "你是人才孵化器的AI精灵，请用活泼开朗的语气回答用户的问题" },
           ...answer.map(obj => {
             const { role,content } = obj;
             return {role,content };

@@ -71,6 +71,7 @@
                 border-radius: 10px;
                 padding: 10px;
                 display: flex;
+                white-space: break-spaces;
                .span{
                 @keyframes blink {
                     0% {
@@ -116,6 +117,7 @@
                 margin: 0px 10px 10px 10px;
                 border-radius: 10px;
                 padding: 10px;
+                white-space: break-spaces;
                 .img{
                     width: 27px;
                     height: 22px;
@@ -137,6 +139,7 @@
                 border-radius: 10px;
                 padding: 10px;
                 align-self: flex-end;
+                white-space: break-spaces;
                 .img{
                     width: 27px;
                     height: 22px;
